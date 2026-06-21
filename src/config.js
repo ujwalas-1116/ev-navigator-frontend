@@ -7,8 +7,9 @@ const getApiUrl = () => {
     return `http://${hostname}:5000/api`;
   }
   
-  // PRODUCTION BACKEND URL: Replace this URL with your actual Render.com URL after deploying
-  return 'https://ev-navigator-backend-ujwala.onrender.com/api';
+  // PRODUCTION BACKEND URL: Reads from Vercel's Environment Variables (no code editing needed!)
+  // Fallback defaults to a placeholder if not set
+  return import.meta.env.VITE_API_URL || 'https://ev-navigator-backend-placeholder.onrender.com/api';
 };
 
 export const API_BASE_URL = getApiUrl();
