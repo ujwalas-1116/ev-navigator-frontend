@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Mail, Lock, CheckCircle2 } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function Login({ onLoginSuccess }) {
   const [emailOrMobile, setEmailOrMobile] = useState('');
@@ -22,7 +23,7 @@ export default function Login({ onLoginSuccess }) {
 
     try {
       // Attempt backend login
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ emailOrMobile, password })
