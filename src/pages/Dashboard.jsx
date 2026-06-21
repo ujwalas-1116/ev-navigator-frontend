@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Map from '../components/Map';
 import { Search, SlidersHorizontal, MapPin, Star, Clock, Battery, LogOut } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function Dashboard({ user, onLogout }) {
   const [stations, setStations] = useState([]);
@@ -102,7 +103,7 @@ export default function Dashboard({ user, onLogout }) {
     const fetchStations = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:5000/api/stations');
+        const response = await fetch(`${API_BASE_URL}/stations`);
         if (response.ok) {
           const data = await response.json();
           setStations(data);
