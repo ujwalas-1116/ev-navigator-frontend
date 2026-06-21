@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Lock, Check } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function ResetPassword() {
   const [emailOrMobile, setEmailOrMobile] = useState('');
@@ -27,7 +28,7 @@ export default function ResetPassword() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/reset-password', {
+      const response = await fetch(`${API_BASE_URL}/auth/reset-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ emailOrMobile, newPassword })
