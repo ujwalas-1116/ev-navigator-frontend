@@ -1,16 +1,13 @@
-# React + Vite
+# EV Charging Station Navigator - Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the React + Vite frontend client application for the EV Charging Station Navigator.
 
-Currently, two official plugins are available:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ujwalas-1116/ev-navigator-frontend&env=VITE_API_URL)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How to Deploy Online
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Click the **Deploy with Vercel** button above.
+2. Vercel will ask you to connect your GitHub account.
+3. It will prompt you to enter the `VITE_API_URL` environment variable:
+   * **Value**: Enter your Render backend URL (e.g. `https://ev-navigator-backend-xxxx.onrender.com/api`).
+4. Click **Deploy**!
