@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Map from '../components/Map';
 import { ArrowLeft, Navigation as NavIcon, Battery, Clock, Zap, DollarSign, ShieldAlert, Award } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function Navigation({ user }) {
   const { stationId } = useParams();
@@ -115,7 +116,7 @@ export default function Navigation({ user }) {
   useEffect(() => {
     const fetchStation = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/stations/${stationId}`);
+        const response = await fetch(`${API_BASE_URL}/stations/${stationId}`);
         if (response.ok) {
           const data = await response.json();
           setStation(data);
