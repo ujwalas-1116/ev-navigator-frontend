@@ -266,7 +266,7 @@ export default function Navigation({ user }) {
   const strokeDashoffset = circumference - (batteryLevel / 100) * circumference;
 
   return (
-    <div className="screen" style={{ padding: '45px 15px 15px 15px', overflowY: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div className="screen navigation-screen">
       
       {/* Top Header */}
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: 15 }}>
