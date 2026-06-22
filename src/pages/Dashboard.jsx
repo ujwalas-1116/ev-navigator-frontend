@@ -159,10 +159,10 @@ export default function Dashboard({ user, onLogout }) {
   };
 
   return (
-    <div className="screen" style={{ padding: '45px 15px 15px 15px', overflowY: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div className="screen dashboard-screen">
       
       {/* Header section with User Profile */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15 }}>
+      <div className="dashboard-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15 }}>
         <div>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '600', textTransform: 'uppercase' }}>Current Vehicle</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -179,7 +179,7 @@ export default function Dashboard({ user, onLogout }) {
       </div>
 
       {/* Map Segment */}
-      <div style={{ marginBottom: 15 }}>
+      <div className="dashboard-map" style={{ marginBottom: 15 }}>
         <Map
           stations={filteredStations}
           userLocation={{ lat: 12.96, lng: 77.59 }}
@@ -190,7 +190,7 @@ export default function Dashboard({ user, onLogout }) {
       </div>
 
       {/* Search Input Bar */}
-      <div style={{ position: 'relative', marginBottom: 12 }}>
+      <div className="dashboard-search" style={{ position: 'relative', marginBottom: 12 }}>
         <input
           type="text"
           className="form-input"
@@ -203,7 +203,7 @@ export default function Dashboard({ user, onLogout }) {
       </div>
 
       {/* Filters Segment */}
-      <div style={{ display: 'flex', gap: 8, marginBottom: 15, overflowX: 'auto', paddingBottom: 4 }}>
+      <div className="dashboard-filters" style={{ display: 'flex', gap: 8, marginBottom: 15, overflowX: 'auto', paddingBottom: 4 }}>
         <select
           value={selectedSpeed}
           onChange={(e) => setSelectedSpeed(e.target.value)}
@@ -263,7 +263,7 @@ export default function Dashboard({ user, onLogout }) {
       </div>
 
       {/* Interactive Bottom Sheet */}
-      <div style={{ flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+      <div className="dashboard-list" style={{ display: 'flex', flexDirection: 'column' }}>
         {selectedStation ? (
           /* Detailed view for selected station */
           <div className="glass-panel" style={{ padding: 16, display: 'flex', flexDirection: 'column', flex: 1, animation: 'fadeIn 0.25s ease-out' }}>
